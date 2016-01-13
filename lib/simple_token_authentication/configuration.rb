@@ -16,9 +16,10 @@ module SimpleTokenAuthentication
     @@identifiers = {}
     @@sign_in_token = false
     @@controller_adapters = ['rails', 'rails_api', 'rails_metal']
-    @@model_adapters = ['active_record', 'mongoid']
+    @@model_adapters = ['active_record', 'mongoid', 'sequel']
     @@adapters_dependencies = { 'active_record' => 'ActiveRecord::Base',
                                 'mongoid'       => 'Mongoid::Document',
+                                'sequel'        => 'Sequel::Model',
                                 'rails'         => 'ActionController::Base',
                                 'rails_api'     => 'ActionController::API',
                                 'rails_metal'   => 'ActionController::Metal' }

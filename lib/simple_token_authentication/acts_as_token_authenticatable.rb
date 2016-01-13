@@ -42,7 +42,18 @@ module SimpleTokenAuthentication
 
     module ClassMethods
       def acts_as_token_authenticatable(options = {})
-        before_save :ensure_authentication_token
+        if respond_to? :before_save
+          before_save :ensure_authentication_token
+        else
+          define_before_save :ensure_authentication_token
+        end
+      end
+
+      def define_before_save(*methods)
+        define_method :before_save do |*methods, &block|
+          methods.each { |method| send(method) }
+          super
+        end
       end
     end
   end

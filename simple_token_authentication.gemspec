@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "inch", "~> 0.4"
   s.add_development_dependency "activerecord", ">= 3.2.6", "< 5"
   s.add_development_dependency 'mongoid', '>= 3.1.0', '< 5'
+  s.add_development_dependency 'sequel', '>= 3.18.0'
   # this is an Inch dependency, which version I want to restrict to keep Ruby 1.9 compatibility
   s.add_development_dependency 'tins', '< 1.7.0'
 end
